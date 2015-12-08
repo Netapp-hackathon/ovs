@@ -3,7 +3,8 @@
 (function (OpCommandController) {
     
     var fs = require("fs-extra");
-    var path = "Z:\\test2.json";
+    var path = "C:\\Users\\suseendr\\Desktop\\Json\\test3.json";
+    var readObjects = require("../data/readObjects.js");
 
     OpCommandController.init = function (app) {
         
@@ -15,15 +16,29 @@
            var executionId = req.params.executionId;
             // This is where you need to fetch the data from the Airlock and return the result based on the id that you have got.
                                   
-            fs.readJson(path, function (err, outPutObject) {
+            fs.readJson(path, function (err, userDataJsonObject) {
                 
                 if (err) {
                     res.status(400).send({ errorNo : -1, errorMsg : "No File present still. Call me back sometime", errorCode : "FAIL", error : err });                    
                 }
                 else {
+                    
+                    
+                        readObjects.fetchWorkspaceData(function (err, userDataJsonObject) {
+                            if (err) {
+                                console.log("Unale to read the file, Error : " + err);
+                            }
+                            else {
+                            for (var index = 0; index < userDataJsonObject.length; index++) {
+                                //console.log(userDataJsonObject[index]);
+                            }
+                                } 
+                        });
+                    
+
                     res.set("Content-Type", "application/json");
-                    res.status(200).send(outPutObject);
-                    console.log(outPutObject) // => 0.1.3 
+                    res.status(200).send(userDataJsonObject);
+                    //console.log(outPutObject) // => 0.1.3 
                 }
             })            
         });

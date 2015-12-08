@@ -11,9 +11,6 @@
                 
                 res.set("Content-type", "application/json");
                 res.status(200).send(results);
-                res.render("vash/index", { title : "Express + vash", error: err, categories : results });
-            
-           
         });
         });
     }
