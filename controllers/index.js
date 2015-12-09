@@ -2,17 +2,16 @@
     
     
     var homeController = require("./homeController.js");
-    //var OpCommandController = require("./OpCommandController.js");
     var getOpsController = require("./GetOpsController.js");
     var getWorkspaceController = require("./getWorkspaceController.js");
-    //var readDataFromAirlock = require("./readDataFromAirlock.js");
+    var postOpsController = require("./postOpController.js");
+    var getResultsController = require("./getResultsController.js");
     controllers.init = function (app) {
-
         homeController.init(app);
-        //OpCommandController.init(app);
         getOpsController.init(app);
         getWorkspaceController.init(app);
-       // readDataFromAirlock.init(app);
+        postOpsController.init(app);
+        getResultsController.init(app);
     };
 
 })(module.exports);

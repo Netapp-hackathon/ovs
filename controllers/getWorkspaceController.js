@@ -5,19 +5,22 @@
     var database = require("../data");
     getWorkspaceController.init = function (app) {
         
-        app.get("/api/Workspace", function (req, res) {
+        app.get("/api/workspace", function (req, res) {
             var url = req.url;            
             var params = parseValue(url);
-            var user = params["username"];
-            
-            database.getOpCategories(function (err, results) {
+            var user = params["username"];           
+            var returnres = true;
+
+            database.getWorkSpaces(function (err, results) {
                 
-                for (var i = 0; i < results[0].elements.length; i++) {
-                    if (results[0].elements[i].UserName == user)
-                        var obj = results[0].elements[i].workspaceNames;
+                for (var i = 0; i < results.length; i++) {
+                    if (results[i].username == user) {
+                        returnres = false;   
+                        res.json(JSON.stringify(results[i]));
+                    }
                 }
-                res.set("Content-type", "application/json");
-                res.status(200).send(obj);
+                if(returnres)
+                    res.json({ err : { errNo : -1, errMsg : "Unable to find workspaces for user " + user } });
             });
         });
 }

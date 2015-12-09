@@ -3,11 +3,15 @@
 var Schema = mongoose.Schema;
 
 //Schemas for Op Commands
+// make it as OpName
 var opsSchema = new Schema({    
-    opCommandName : String,
-    opDescription : String,
-    opCommandId : Number,
-    opCategory : String
+    opName : String,
+    opDescr : String,
+    opId : Number,
+    opCategory : String,
+    opType : String,
+    opParams : Object,
+    opParamsReq : Boolean
 });
 
 module.exports = mongoose.model("cmnds", opsSchema);

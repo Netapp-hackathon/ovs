@@ -1,10 +1,10 @@
 ﻿//readOps.js
 (function (readOps) {
     var fs = require("fs-extra");
-    var OpsPath = "C:\\Users\\suseendr\\Desktop\\Json\\Ops.json";  // currently the path is hardcoded, and will be made configurable.   
+    var config = require("./configFile.js");
     
     readOps.fetchOpsData = function (next) {
-        fs.readJson(OpsPath, function (err, outPutObject) {
+        fs.readJson(config.OpsPath, function (err, outPutObject) {
             
             if (err) {
                 next(err, null);

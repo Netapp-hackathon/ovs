@@ -1,11 +1,11 @@
 ﻿//readObjects.js
 (function (readObjects) {
     var fs = require("fs-extra");
-    var workspacePath = "C:\\Users\\suseendr\\Desktop\\Json\\test3.json";  // currently the path is hardcoded, and will be made configurable.
+    var config = require("./configFile.js");
     
     
     readObjects.fetchWorkspaceData = function (next) {
-     fs.readJson(workspacePath, function (err, outPutObject) {
+     fs.readJson(config.workspacePath, function (err, outPutObject) {
         
             if (err) {
                 next(err, null);

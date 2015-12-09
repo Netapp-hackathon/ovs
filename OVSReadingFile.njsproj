@@ -31,17 +31,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="controllers\GetOpsController.js" />
+    <Compile Include="controllers\getResultsController.js" />
     <Compile Include="controllers\getWorkspaceController.js" />
     <Compile Include="controllers\homeController.js" />
     <Compile Include="controllers\index.js" />
-    <Compile Include="controllers\OpCommandController.js" />
-    <Compile Include="controllers\PostOpController.js" />
+    <Compile Include="controllers\postOpController.js" />
     <Compile Include="data\configFile.js" />
     <Compile Include="data\database.js" />
     <Compile Include="data\index.js" />
     <Compile Include="data\readOps.js" />
     <Compile Include="data\readObjects.js" />
+    <Compile Include="data\readResults.js" />
     <Compile Include="models\ovs.ops.server.model.js" />
+    <Compile Include="models\ovs.results.server.model.js" />
     <Compile Include="models\ovs.usertodata.server.model.js" />
     <Compile Include="server.js" />
     <Content Include="package.json" />

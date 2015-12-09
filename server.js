@@ -2,11 +2,10 @@
 var express = require("express");
 var app = express();
 var controllers = require("./controllers");
-
-
+var bodyparser = require("body-parser");
 
 app.set("view engine", "vash");
-
+app.use(bodyparser());
 controllers.init(app);
 
 app.get("/foo/bar/", function (req, res) {
