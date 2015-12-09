@@ -8,9 +8,13 @@
         app.get("/api/ops", function (req, res) {
             
             database.getOpCategories(function (err, results) {
-
-                res.set("Content-type", "application/json");
-                res.json(JSON.stringify(results));
+                if (results) {
+                    results.push({ err : { errNo : 0, errMsg : "Success" } });
+                    res.json(results);
+                }
+                else {
+                    res.json({ err : { errNo : 0, errMsg : "Failure" } });
+                }
         });
         });
     }

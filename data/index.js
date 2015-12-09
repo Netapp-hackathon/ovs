@@ -14,7 +14,7 @@
     data.getOpCategories = function (next) {
             console.log("Read the database");
         // Provide details in the find method on what to look out for
-        cmnds.find(function (err, results) {
+        cmnds.find({}, {_id:0}, function (err, results) {
             if (err) {
                 next(err, null);
             }
@@ -27,7 +27,7 @@
     data.getWorkSpaces = function (next) {
          console.log("Read the database");
         // Provide details in the find method on what to look out for
-        usertoobjects.find(function (err, results) {
+        usertoobjects.find({}, {_id:0}, function (err, results) {
             if (err) {
                 next(err, null);
             }
@@ -40,7 +40,7 @@
     data.getResultsById = function (next) {        
         console.log("Read the database");
         // Provide details in the find method on what to look out for
-        results.find(function (err, results) {
+        results.find({}, {_id:0}, function (err, results) {
             if (err) {
                 next(err, null);
             }

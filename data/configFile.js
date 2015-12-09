@@ -11,5 +11,8 @@
     resultsPath : "C:\\Users\\suseendr\\Desktop\\Json\\results.json",
     OpsPath : "C:\\Users\\suseendr\\Desktop\\Json\\Ops.json",
     workspacePath : "C:\\Users\\suseendr\\Desktop\\Json\\test3.json",
-    executionIdCounter : 0
+    executionIdCounter : 0,
+    workSpaceCounter : 0,
+    opsCounter : 0,
+    outFileCounter : 0
 }
