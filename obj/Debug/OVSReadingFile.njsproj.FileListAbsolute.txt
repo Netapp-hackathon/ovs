@@ -1,2 +1,0 @@
-C:\Users\suseendr\Documents\Visual Studio 2015\Projects\NodeProjects\OVSReadingFile\OVSReadingFile\obj\Debug\OVSReadingFile.njsprojResolveAssemblyReference.cache
-C:\Users\suseendr\Documents\Visual Studio 2015\Projects\NodeProjects\OVSReadingFile\OVSReadingFile\bin\Microsoft.NodejsTools.WebRole.dll
